@@ -1,0 +1,23 @@
+# name: test/sql/hrt_ext.test
+# description: test hrt_ext extension
+# group: [sql]
+
+# Before we load the extension, this will fail
+statement error
+SELECT hrt_ext('Sam');
+----
+Catalog Error: Scalar Function with name hrt_ext does not exist!
+
+# Require statement will ensure this test is run with this extension loaded
+require hrt_ext
+
+# Confirm the extension works
+query I
+SELECT hrt_ext('Sam');
+----
+...........🦆 Sam
+
+query I
+SELECT hrt_ext_openssl_version('Michael') ILIKE 'HrtExt Michael, my linked OpenSSL version is OpenSSL%';
+----
+true

@@ -1,0 +1,32 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Cursor / local caches
+.cache/
+.cursor/
+
+# Build outputs
+build/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+compile_commands.json
+.ninja_*
+*.o
+*.so
+*.dylib
+*.dll
+
+# DuckDB/local generated files
+*.duckdb
+*.db
+*.wal
+
+# Logs/temp
+*.log
+*.tmp
+.DS_Store
